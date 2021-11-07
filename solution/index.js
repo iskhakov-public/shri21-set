@@ -1,8 +1,9 @@
 module.exports = class {
     constructor(iter = []) {
+        // Check before for..of loop do the same and provide meaningful description
         if (iter === null || typeof iter[Symbol.iterator] !== 'function') {
             throw new TypeError(
-                'not iterable'
+                'provided argument is not iterable'
             )
         }
         this._set = []
